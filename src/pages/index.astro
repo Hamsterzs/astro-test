@@ -1,0 +1,31 @@
+---
+import ReactCounter from "../components/react/Counter";
+import SolidCounter from "../components/solid/Counter";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div class="flex h-screen w-screen flex-col items-center justify-center">
+      <h1 class="my-3 text-4xl text-red-500">Counters</h1>
+      <div class="flex gap-4">
+        <div>
+          <a href="/react-counter" class="border-2 border-blue-300 py-2 px-4"
+            >React counter</a
+          >
+        </div>
+        <div>
+          <a href="/solid-counter" class="border-2 border-blue-300 py-2 px-4"
+            >Solid Counter</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

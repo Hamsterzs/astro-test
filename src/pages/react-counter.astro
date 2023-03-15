@@ -1,0 +1,22 @@
+---
+import ReactCounter from "../components/react/Counter";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div class="flex h-screen w-screen flex-col items-center justify-center">
+      <h1 class="my-4 text-4xl text-red-500">React counter</h1>
+      <ReactCounter client:load />
+      <div class="absolute top-4 left-4 my-4">
+        <a href="/" class="text-blue-500">Go back</a>
+      </div>
+    </div>
+  </body>
+</html>
