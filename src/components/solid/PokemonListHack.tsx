@@ -17,25 +17,25 @@ const PokemonList = () => {
   createEffect(() => {
     console.log("Running on mount");
 
-    const serverList = document.querySelectorAll(".server-list-item");
+    const serverListContainer = document.getElementById(
+      "server-list-container"
+    );
+
+    if (!serverListContainer) return;
+
+    const serverList = serverListContainer.querySelectorAll("li");
 
     if (!serverList) return;
 
     const clientlist = [];
 
     serverList.forEach((item) =>
-      clientlist.push({ name: item.dataset.name, url: item.dataset.url })
+      clientlist.push({ name: item.textContent, url: item.dataset.u })
     );
 
     console.log("clientlist", clientlist);
 
     setPokemons(clientlist);
-
-    const serverListContainer = document.getElementById(
-      "server-list-container"
-    );
-
-    if (!serverListContainer) return;
 
     serverListContainer.remove();
   });
@@ -54,9 +54,7 @@ const PokemonList = () => {
         <div class="h-[700px] overflow-hidden overflow-y-auto">
           <ul>
             <For each={sortedPokemons()}>
-              {(pokemon) => (
-                <li class="my-5 border-2 py-2 px-4 text-2xl">{pokemon.name}</li>
-              )}
+              {(pokemon) => <li>{pokemon.name}</li>}
             </For>
           </ul>
         </div>

@@ -13,15 +13,7 @@ const PokemonOnlyList = ({
     >
       <ul>
         <For each={pokemons} fallback={<div>Loading...</div>}>
-          {(pokemon) => (
-            <li
-              class="server-list-item my-5 border-2 py-2 px-4 text-2xl"
-              data-name={pokemon.name}
-              data-url={pokemon.url}
-            >
-              {pokemon.name}
-            </li>
-          )}
+          {(pokemon) => <li data-u={pokemon.url}>{pokemon.name}</li>}
         </For>
       </ul>
     </div>
